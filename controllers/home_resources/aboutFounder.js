@@ -1,4 +1,5 @@
-import aboutFounder from "../models/home_resources.js";
+
+import aboutFounder from "../../models/home_resources/aboutFounder.js";
 
 // add About Founder section in zawiyah home page
 // export const addAboutFounder = async (req, res) => {
@@ -12,6 +13,7 @@ import aboutFounder from "../models/home_resources.js";
 //         res.status(404).json({ message: error.message })
 //     }
 // }
+
 
 // update About Founder section in zawiyah home page
 export const updateAboutFounder = async (req, res) => {

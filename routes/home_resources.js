@@ -1,5 +1,5 @@
 import express from "express"
-import { getAboutFounder, updateAboutFounder } from "../controllers/home_resources.js";
+import { getAboutFounder, updateAboutFounder } from "../controllers/home_resources/aboutFounder.js";
 
 const router = express.Router();
 router.post("/get/aboutFounder", getAboutFounder);

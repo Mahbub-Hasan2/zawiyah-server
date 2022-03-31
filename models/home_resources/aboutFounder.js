@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+
+// about Founder Schema for home page
 const aboutFounderSchema = mongoose.Schema({    
     name: String,
     bio: String,
