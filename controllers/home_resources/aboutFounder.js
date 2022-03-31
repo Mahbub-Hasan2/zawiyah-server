@@ -20,13 +20,17 @@ export const updateAboutFounder = async (req, res) => {
     const af = req.body;
     const id = af._id
     var query = { '_id': id };
-    const newData = aboutFounder(af);
-
-    try {
-        await aboutFounder.findOneAndUpdate(query, newData, { upsert: true });
-        res.status(201).json({ message: "successfully updated" });
-    } catch (err) {
-        res.status(409).json({ message: err.message });
+    if (af.name.length) {
+        const newData = aboutFounder(af);
+        try {
+            await aboutFounder.findOneAndUpdate(query, newData, { upsert: true });
+            res.status(201).json({ message: "success" });
+        } catch (err) {
+            res.status(409).json({ message: err.message });
+        }
+    }
+    else {
+        res.status(409).json({ message: 'error' });
     }
 }
 
