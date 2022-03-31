@@ -1,6 +1,6 @@
 import topPickedResources from "../../models/home_resources/topPickedResources.js";
 
-// add About Zawiyah section in zawiyah home page
+// add Top Picked Resources section in zawiyah home page
 export const addTopPickedResources = async (req, res) => {
     const ress = topPickedResources(req.body);
     // console.log(req.body)
@@ -15,7 +15,7 @@ export const addTopPickedResources = async (req, res) => {
 
 
 
-// update About Zawiyah section in zawiyah home page
+// update Top Picked Resources section in zawiyah home page
 export const updateTopPickedResources = async (req, res) => {
     const af = req.body;
     const id = af._id
