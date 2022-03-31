@@ -128,8 +128,8 @@ export const deleteUser = async (req, res) => {
     const id = req.body._id;
     console.log(id)
     try {
-        await user.find({ _id: id }).deleteOne();
-        res.status(201).json({ message: "successfully deleted" });
+        await user.findOneAndUpdate({ _id: id }, { isDeleted: true }, { upsert: true });
+        res.status(201).json({ message: "success" });
     } catch (err) {
         res.status(409).json({ message: err.message });
     }
