@@ -2,8 +2,10 @@ import mongoose from "mongoose";
 
 // about Founder Schema for home page
 const aboutZawiyahSchema = mongoose.Schema({    
-    title: String,
-    description: String,
+    title_en: String,
+    title_ur: String,
+    description_en: String,
+    description_ur: String,
     img: String,
     isDeleted :  {
         type: Boolean,
