@@ -41,11 +41,21 @@ export const getTopPickedResources = async (req, res) => {
     }
 }
 
+// export const deleteTopPickedResources = async (req, res) => {
+//     const id = req.body.id;
+//     // console.log(id)
+//     try {
+//         await topPickedResources.findOneAndUpdate({ _id: id }, { isDeleted: true }, { upsert: true });
+//         res.status(201).json({ message: "successfully deleted" });
+//     } catch (err) {
+//         res.status(409).json({ message: err.message });
+//     }
+// }
+
 export const deleteTopPickedResources = async (req, res) => {
-    const id = req.body.id;
-    // console.log(id)
+    const id = req.body._id;
     try {
-        await topPickedResources.findOneAndUpdate({ _id: id }, { isDeleted: true }, { upsert: true });
+        await topPickedResources.find({ _id: id }).deleteOne();
         res.status(201).json({ message: "successfully deleted" });
     } catch (err) {
         res.status(409).json({ message: err.message });

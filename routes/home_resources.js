@@ -16,7 +16,7 @@ router.post("/update/aboutZawiyah", updateAboutZawiyah);
 // -----------
 
 router.post("/add/tpr", addTopPickedResources);
-router.post("/get/tpr", getTopPickedResources);
+router.get("/get/tpr", getTopPickedResources);
 router.post("/update/tpr", updateTopPickedResources);
 router.post("/delete/tpr", deleteTopPickedResources);
 

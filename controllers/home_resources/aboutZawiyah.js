@@ -36,6 +36,7 @@ export const getAboutZawiyah = async (req, res) => {
     try {
         const data = await aboutZawiyah.find();
         res.status(200).json(data);
+        // console.log(data)
     }
     catch (error) {
         res.status(404).json({ message: error.message })
