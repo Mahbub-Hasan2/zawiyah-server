@@ -12,7 +12,6 @@ export const requestLevelChange = async (req, res) => {
 
         else {
             var query = { 'uid': req.body.uid };
-            console.log(query, req.body)
 
             await level_request.findOneAndUpdate(query, {
                 $set: { uid: req.body.uid, c_level: req.body.c_level, d_level: req.body.d_level, }
@@ -35,7 +34,6 @@ export const getLevelChangeRequests = async (req, res) => {
 }
 export const processLevelChangeRequest = async (req, res) => {
     const stat = req.body.status;
-    console.log(stat)
     try {
         if (stat === 'accepted') {
             // update user status
