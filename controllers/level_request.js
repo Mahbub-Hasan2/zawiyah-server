@@ -14,7 +14,7 @@ export const requestLevelChange = async (req, res) => {
             var query = { 'uid': req.body.uid };
 
             await level_request.findOneAndUpdate(query, {
-                $set: { uid: req.body.uid, c_level: req.body.c_level, d_level: req.body.d_level, }
+                $set: { uid: req.body.uid, c_level: req.body.c_level, d_level: req.body.d_level, status: "requested" }
             }, { upsert: true });
 
             res.status(201).json({ message: "success" });
@@ -26,7 +26,7 @@ export const requestLevelChange = async (req, res) => {
 }
 export const getLevelChangeRequests = async (req, res) => {
     try {
-        const requests = await level_request.find({ status: "canceled" });
+        const requests = await level_request.find({ status: "requested" });
         res.status(409).json(requests);
     } catch (err) {
         res.status(409).json({ message: err.message });
