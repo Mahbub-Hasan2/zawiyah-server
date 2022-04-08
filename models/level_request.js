@@ -9,7 +9,12 @@ const levelSchema = mongoose.Schema({
     completed :  {
         type: Boolean,
         default: false
-    }
+    },
+    status: {
+        type: String, 
+        enum: ['requested', 'accepted', 'canceled'],
+        default: 'requested'
+    },
 });
 
 const level_request = mongoose.model("levelRequest", levelSchema);
