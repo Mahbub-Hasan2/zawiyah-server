@@ -12,6 +12,24 @@ export const getUserAnswer = async (req, res)=>{
         res.status(404).json({message : error.message})
     }
 }
+
+// ---------------------------------
+
+export const getUserAnswerbyid = async (req, res)=>{    
+    const uid = req.body.uid
+    console.log("getting answer of user")
+    try{
+        const answers = await answer.find({uid:uid, isDeleted:false});
+        res.status(200).json(answers);
+    }
+    catch (error){
+        res.status(404).json({message : error.message})
+    }
+}
+
+// ---------------------------------
+
+
 export const addUserAnswer = async (req, res)=>{  
     const dt = req.body
     // var arr = JSON.parse(dt);

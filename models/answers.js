@@ -10,6 +10,7 @@ const answerSchema = mongoose.Schema({
     },
     ticks : Number,
     date: String,
+    FGDate: String,
     isDeleted :  {
         type: Boolean,
         default: false
