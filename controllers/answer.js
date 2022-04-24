@@ -3,7 +3,7 @@ import answer from "../models/answers.js"
 export const getUserAnswer = async (req, res)=>{    
     const uid = req.body.uid
     const date = req.body.date
-    console.log("getting answer of user")
+    // console.log("getting answer of user")
     try{
         const answers = await answer.find({uid:uid, date:date, isDeleted:false});
         res.status(200).json(answers);
@@ -15,9 +15,9 @@ export const getUserAnswer = async (req, res)=>{
 
 // ---------------------------------
 
-export const getUserAnswerbyid = async (req, res)=>{    
+export const getUserAnswersbyuid = async (req, res)=>{    
     const uid = req.body.uid
-    console.log("getting answer of user")
+    // console.log("getting answer of user")
     try{
         const answers = await answer.find({uid:uid, isDeleted:false});
         res.status(200).json(answers);

@@ -9,6 +9,7 @@ const answerSchema = mongoose.Schema({
         ref : "user"
     },
     ticks : Number,
+    fullTicks : Number,
     date: String,
     FGDate: String,
     isDeleted :  {
