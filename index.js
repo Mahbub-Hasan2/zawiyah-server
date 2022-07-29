@@ -4,12 +4,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 import key  from "./config/keys.js";
 import userRouter from './routes/user.js'
-import questionRouter from './routes/question.js'
-import answerRouter from './routes/answer.js'
-import videoRouter from './routes/landing_video.js'
-import levelRequestRouter from './routes/level_request.js'
-import resourcesRouter from './routes/resources.js'
-import homeresourcesRouter from './routes/home_resources.js'
 
 
 // import { deleteUser } from "./controllers/user.js";
@@ -23,12 +17,6 @@ app.use(cors());
 // app.delete("/:email", deleteUser);
 
 app.use("/user", userRouter);
-app.use("/question", questionRouter);
-app.use("/answer", answerRouter);
-app.use("/video", videoRouter);
-app.use("/request", levelRequestRouter);
-app.use("/resources", resourcesRouter);
-app.use("/homeResources", homeresourcesRouter);
 
 
 const port = process.env.PORT || 5000
